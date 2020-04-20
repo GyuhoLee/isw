@@ -4,7 +4,7 @@
 #define LED_OFF 0
 
 const int Led[16] = {
-	4, 17, 18, 27, 22, 23, 24, 25
+	4, 17, 18, 27, 22, 23, 24, 25,
 	6, 12, 13, 16, 19, 20, 26, 21
 };
 
@@ -13,9 +13,9 @@ void LEDControl(int pinnum){
 	for(i = 0; i < 16; i++)
 	{
 		if(i == pinnum || i - 1 == pinnum)
-			digitalWrite[Led[i], LED_ON);
+			digitalWrite(Led[i], LED_ON);
 		else
-			digitalWrite[Led[i], LED_OFF);
+			digitalWrite(Led[i], LED_OFF);
 	}
 }
 
