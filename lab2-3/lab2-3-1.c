@@ -45,7 +45,7 @@ int main(void)
 		pinMode(Keypad[i], INPUT);
 	while(1)
 	{
-		keypadnum = KeypadRead();
+		KeypadRead();
 	}
 	return 0;
 }

@@ -13,7 +13,7 @@ int KeypadRead()
 	return keypadnum;
 }
 
-void LedControl(int num)
+int LedControl(int num)
 {
 	int i;
 	for(i=0; i<8; i++) {
@@ -22,7 +22,7 @@ void LedControl(int num)
 		else
 			digitalWrite(LedRed[i], LOW);
 	}
-	if(!digitalRead(Keypad[2])
+	if(!digitalRead(Keypad[2]))
 		return 0;
 	return 1;
 }
@@ -48,7 +48,7 @@ int main(void)
 					escape = LedControl(i);
 					if(!escape) break;
 					for(i = 0; i < 50000000; i++){
-						escape = digitalRead(Keypad[2]
+						escape = digitalRead(Keypad[2]);
 						if(!escape) break;
 					}
 					if(!escape) break;
@@ -64,7 +64,7 @@ int main(void)
 					escape = LedControl(i);
 					if(!escape) break;
 					for(i = 0; i < 50000000; i++){
-						escape = digitalRead(Keypad[2]
+						escape = digitalRead(Keypad[2]);
 						if(!escape) break;
 					}
 					if(!escape) break;
