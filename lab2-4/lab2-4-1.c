@@ -10,7 +10,7 @@ int FndState[6] = { 5, 5, 5, 5, 5, 5 };
 void Init() {
 	int i;
 	if (wiringPiSetupGpio() == -1) {
-		printf(¡°wiringPiSetupGpio() error\n¡±);
+		//printf(¡°wiringPiSetupGpio() error\n¡±);
 		exit(-1);
 	}
 	for (i = 0; i < 6; i++) {

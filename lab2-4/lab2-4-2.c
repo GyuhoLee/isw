@@ -10,7 +10,7 @@ int FndState[6] = { 0, 0, 0, 0, 0, 0 };
 void Init() {
 	int i;
 	if (wiringPiSetupGpio() == -1) {
-		printf(¡°wiringPiSetupGpio() error\n¡±);
+		//printf(¡°wiringPiSetupGpio() error\n¡±);
 		exit(-1);
 	}
 	for (i = 0; i < 6; i++) {
@@ -51,8 +51,8 @@ void TimePlus(int position)
 {
 	if (FndState[position] == 9)
 	{
-		FndState[positon] = 0;
-		if (position != 5) TomePlus(position + 1);
+		FndState[position] = 0;
+		if (position != 5) TimePlus(position + 1);
 	}
 	else FndState[position]++;
 }
