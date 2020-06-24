@@ -91,7 +91,7 @@ void Fnd(char *data)
 {
     int i;
     int num[6] = {-1, -1, -1 ,-1 ,-1 ,-1};
-    for(i = 0; i < strlen.data; i++
+    for(i = 0; i < strlen(data); i++)
     {
         num[i] = atoi(data[i]);
     }
