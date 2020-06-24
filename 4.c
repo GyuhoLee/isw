@@ -80,7 +80,6 @@ void FndDisplay(int position, int num)
     int shift = 0x01; // FndFont와 And 연산하여 출력할 LED의 상태 결정
     for( i = 0; i < 8; i++ )
     {
-		digitalWrite(FndPin[i], 0); // 우선 지운다.
         flag = ( FndFont[num] & shift ); // i = 0, FndFont[ 0 ] = 0x3F라 하면 (0b00111111 & 0b00000100 = 1) 이다.
         digitalWrite( FndPin[ i ], flag ); // FndPin[ ]을 flag( 0또는 1 )로 ON/OFF
         shift <<= 1; // 왼쪽으로 한 비트 쉬프트한다. I = 0이라 하면, ( shift = 0b00000001 )에서 ( shift = 0b00000010)로 변한다.
@@ -108,8 +107,8 @@ void Fnd(char *data)
 		else break;
 	}
 
-   // while(1)
-    //{
+    while(1)
+    {
         for(i = 0; i < 6; i++)
         {
             if(nums[i] != -1)
@@ -118,7 +117,7 @@ void Fnd(char *data)
                 delay(1);
             }
         }
-    //}
+    }
 
 }
 
