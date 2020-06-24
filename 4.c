@@ -90,7 +90,23 @@ void FndDisplay(int position, int num)
 void Fnd(char *data)
 {
     int i;
-    int num[6] = {-1, -1, -1 ,-1 ,-1 ,-1};
+	int num = atoi(data);
+	int num[6];
+
+
+	for (i = 0; i < 6; i++)
+	{
+		num[i] = num % 10;
+		num /= 10;
+	}
+
+	//자릿수에 맞춰서 출력. ex) 세자리수는 왼쪽 3개에 0을 넣는 것이 아니라 쓰지 않는다.
+	for (i = 5; i >= 0; i--)
+	{
+		if (num[i] == 0) num[i] = -1;
+		else break;
+	}
+
     for(i = 0; i < strlen(data); i++)
     {
 		num[i] = data[i] - '0';
@@ -99,9 +115,9 @@ void Fnd(char *data)
     {
         for(i = 0; i < 6; i++)
         {
-            if(data[i] >= 0 && data[i] < 10)
+            if(num[i] != -1)
             {
-                FndDisplay(i, data[i]);
+                FndDisplay(i, num[i]);
                 delay(1);
             }
         }
