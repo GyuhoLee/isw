@@ -93,7 +93,7 @@ void Fnd(char *data)
     int num[6] = {-1, -1, -1 ,-1 ,-1 ,-1};
     for(i = 0; i < strlen(data); i++)
     {
-        num[i] = atoi(data[i]);
+		num[i] = data[i] - '0';
     }
     while(1)
     {
